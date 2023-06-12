@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserInput {
+  email: String!
+  name: String!
+  password: String!
+}
+
+type DefaultUserModel {
+  email: String
+  id: ID
+  name: String
+  password: String
+  token: String!
+}
+
+type Mutation {
+  createDefaultUser: DefaultUserModel!
+  createUser(createUser: CreateUserInput!): UserModel!
+  removeUser(id: String!): String!
+  updateUser(updateUser: UpdateUserInput!): UserModel!
+}
+
+type Query {
+  findAll: [UserModel!]!
+  findAllByDomainOfEmail(domain: String!): [UserModel!]!
+  findOne(id: String!): UserModel!
+}
+
+input UpdateUserInput {
+  email: String
+  id: ID!
+  name: String
+  password: String
+}
+
+type UserModel {
+  email: String!
+  id: ID!
+  name: String!
+  password: String!
+}

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: accelerated-mongo
+    volumes:
+      - ./mongo:/data/db
+      - ./backup:/backup
+    ports:
+      - 27017:27017
+    mem_limit: 500m
+volumes:
+  mongo:
+    driver: local
+networks:
+  default:
+    name: accelerated
+    external: true
